@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <title>Game Design</title>
+  </head>
+  <body>
+    <div class="hero">
+      <p class="smalltext">Let the games begin</p>
+      <h1 class="game-header">Donut crunch</h1>
+      <div class="buttons">
+        <button class="game-button play-game" id="play-game">Play</button>
+        <div class="game-area d-none g-2">
+          <div class="d-flex g-2">
+            <div class="game-score d-flex g-2">
+              <img
+                src="./Donuts/pngs/pink_icing_sprinkles.png"
+                alt=""
+                srcset=""
+                width="30"
+                height="30"
+              />
+              <h3><span id="actual-score"></span></h3>
+            </div>
+            <div class="game-score d-flex g-2">
+              <img
+                src="./coins/01.png"
+                alt=""
+                srcset=""
+                width="30"
+                height="30"
+              />
+              <h3><span id="actual-coins"></span></h3>
+            </div>
+            <div class="game-score d-flex g-2 d-none speedx2">
+              <img
+                src="./coins/01.png"
+                alt=""
+                srcset=""
+                width="30"
+                height="30"
+              />
+              <p><span id="speedx2">SPEED x2</span></p>
+            </div>
+            <div class="game-score d-flex g-2 d-none speedx3">
+              <img
+                src="./coins/01.png"
+                alt=""
+                srcset=""
+                width="30"
+                height="30"
+              />
+              <p><span id="speedx3">SPEED x3</span></p>
+            </div>
+            <div class="game-score d-flex g-2 d-none pointsx2">
+              <img
+                src="./coins/01.png"
+                alt=""
+                srcset=""
+                width="30"
+                height="30"
+              />
+              <p><span id="pointsx2">points x2</span></p>
+            </div>
+          </div>
+          <div>
+            <button class="game-button pause-game">Pause game</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="play-area">
+      <canvas id="canvas1"></canvas>
+    </div>
+    <div class="footer d-flex g-2">
+      <div class="info">
+        <h4>Info</h4>
+        <div class="info-text d-flex g-2">
+          <img
+            src="./Donuts/pngs/pink_icing_sprinkles.png"
+            alt=""
+            srcset=""
+            width="30"
+            height="30"
+          />
+          Your score obtained by playing the game
+        </div>
+        <div class="info-text d-flex g-2">
+          <img src="./coins/01.png" alt="" srcset="" width="30" height="30" />
+          <div>
+            Coins you can use to buy new characters
+            <p class="text-xs">For every 50 point you earn, you get 5 coins</p>
+          </div>
+        </div>
+        <div class="info-text d-flex g-2">
+          <img
+            src="./Powerups/speed-x2.png"
+            alt=""
+            srcset=""
+            width="30"
+            height="30"
+          />
+          <div>Your speed is increase 2x for 10s</div>
+        </div>
+        <div class="info-text d-flex g-2">
+          <img
+            src="./Powerups/speed-x3.png"
+            alt=""
+            srcset=""
+            width="30"
+            height="30"
+          />
+          <div>Your speed is increase 3x for 10s</div>
+        </div>
+        <div class="info-text d-flex g-2">
+          <img
+            src="./Powerups/points-x2.png"
+            alt=""
+            srcset=""
+            width="30"
+            height="30"
+          />
+          <div>Your points are increase 2x for 10s</div>
+        </div>
+      </div>
+      <div class="buy-chrs">
+        <h4>Buy Characters</h4>
+        <div class="d-flex chrs">
+          <div class="character flex-column d-flex g-2">
+            <img
+              src="./Character display/purple_default_blink.gif"
+              alt=""
+              srcset=""
+              width="90"
+              height="90"
+            />
+            <div>
+              <button class="game-button chr-button character-1" disabled>
+                Default
+              </button>
+            </div>
+          </div>
+          <div class="character flex-column d-flex g-2">
+            <img
+              src="./Character display/blue_still.png"
+              alt=""
+              srcset=""
+              width="90"
+              height="90"
+            />
+            <div>
+              <button
+                class="game-button character-2 chr-button d-flex"
+                disabled
+              >
+                <img
+                  src="./coins/01.png"
+                  alt=""
+                  srcset=""
+                  width="20"
+                  height="20"
+                />
+                <h3>100</h3>
+              </button>
+            </div>
+          </div>
+          <div class="character flex-column d-flex g-2">
+            <img
+              src="./Character display/fat_pink_blink.gif"
+              alt=""
+              srcset=""
+              width="90"
+              height="90"
+            />
+            <div>
+              <button
+                class="game-button character-3 chr-button d-flex"
+                disabled
+              >
+                <img
+                  src="./coins/01.png"
+                  alt=""
+                  srcset=""
+                  width="20"
+                  height="20"
+                />
+                <h3>200</h3>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d13068;
+  font-family: 'Press Start 2P';
+  flex-direction: column;
+  color: white;
+  overflow-x: none;
+}
+.hero {
+  width: 800px;
+  margin-bottom: 0.5rem;
+  margin-top: 3rem;
+}
+
+.smalltext {
+  font-size: x-small;
+  text-transform: uppercase;
+}
+
+.game-header {
+  font-size: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  padding: 1rem 0;
+}
+
+.game-button {
+  padding: 0.5rem 1rem;
+  border-radius: 7px;
+  outline: none;
+  border: none;
+  font-family: 'Press Start 2P';
+  text-transform: uppercase;
+  background: #ffc800;
+  box-shadow: 1px 1px 5px;
+}
+
+.game-button:hover {
+  background-color: #ffbb00;
+}
+
+#canvas1 {
+  width: 800px;
+  height: 500px;
+  border: 4px solid rgb(255, 255, 255);
+  border-radius: 15px;
+  background-image: linear-gradient(#f8e1b8, #f8e1b8);
+}
+
+.d-none {
+  display: none !important;
+}
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+.flex-column {
+  flex-direction: column;
+}
+.g-2 {
+  gap: 1rem;
+}
+.game-area {
+  margin-top: 1.5rem;
+  justify-content: space-between;
+}
+.game-score {
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+
+  background-color: #ffbb00;
+  color: black;
+  width: fit-content;
+}
+.footer {
+  width: 800px;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+.info {
+  width: 35%;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+
+.buy-chrs {
+  width: 65%;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+.buy-chrs .chrs {
+  gap: 0.5rem;
+}
+
+.buy-chrs h4 {
+  margin-bottom: 1rem;
+}
+
+.character {
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 0.5rem;
+}
+
+.chr-button {
+  min-width: 131px;
+}
+.chr-button h3 {
+  padding-left: 1rem;
+}
+
+.info .info-text {
+  margin-top: 1rem;
+  font-size: small;
+}
+
+.text-xs {
+  font-size: x-small;
+  margin: 0.3rem 0;
+}
