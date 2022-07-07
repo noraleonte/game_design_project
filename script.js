@@ -26,9 +26,26 @@ $('.pause-game').click(() => {
     animate();
   }
 });
+const backgroundMusic = document.createElement('audio');
+backgroundMusic.src = 'background.mp3';
 
 //Canvas setup
+// function handleMusic() {
+//   if (typeof backgroundMusic.loop == 'boolean') {
+//     backgroundMusic.loop = true;
+//   } else {
+//     backgroundMusic.addEventListener(
+//       'ended',
+//       function () {
+//         this.currentTime = 0;
+//         this.play();
+//       },
+//       false
+//     );
+//   }
+// }
 
+backgroundMusic.play();
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 canvas.width = 800;
@@ -430,12 +447,12 @@ function handleDonuts() {
           coins += 5;
         }
 
-        if (score >= 10 && !character2Unlocked) {
+        if (coins >= 10 && !character2Unlocked) {
           $('.character-2').removeAttr('disabled');
 
           character2Unlocked = true;
         }
-        if (score >= 200 && !character3Unlocked) {
+        if (coins >= 20 && !character3Unlocked) {
           character3Unlocked = true;
           $('.character-3').removeAttr('disabled');
         }
@@ -867,6 +884,7 @@ function animate() {
   player.draw();
   handleEnemies();
   handlePowerups();
+  backgroundMusic.play();
   // ctx.fillStyle = 'black';
   // ctx.fillText(`Score: ${score}`, 30, 30);
   $('#actual-score').html(score);
