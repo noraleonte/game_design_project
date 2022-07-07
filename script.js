@@ -863,7 +863,7 @@ $('.character-3').on('click', (e) => {
     $('.character-2').removeAttr('disabled');
     $('.character-2').html('select');
 
-    $('.character-3').attr('disabled'.true);
+    $('.character-3').attr('disabled', true);
     $('.character-3').html('selected');
 
     selectedCharacter = 3;
